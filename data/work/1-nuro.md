@@ -9,4 +9,4 @@ date: "2025 - Now"
 
 ![](/resources/work/nuro-figure-1.jpg)
 
-[In Progress]
+[ Under Construction ]

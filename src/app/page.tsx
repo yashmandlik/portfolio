@@ -31,7 +31,7 @@ const HomePage = () => {
         <div className="w-full md:w-1/2 text-left md:pl-10 mb-30 md:mb-0">
           <p className="mb-5">Projects and Learnings</p>
           {/* {projectPreviews} */}
-          <p className="text-xs text-stone-500">[In Progress]</p>
+          <p className="text-xs text-stone-500">[ Under Construction ]</p>
         </div>
       </div>
     </div>
