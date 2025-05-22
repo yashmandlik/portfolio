@@ -15,6 +15,7 @@ const getWorkMetadata = (): WorkMetadata[] => {
       role: contentMatter.data.role,
       desc: contentMatter.data.desc,
       date: contentMatter.data.date,
+      website: contentMatter.data.website,
       slug: fileName.replace(".md", ""),
     }
   });
