@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <footer className="flex border-t 
-        pb-2 px-10 lg:px-0
+        pb-5 px-10 lg:px-0
         transition-[padding] duration-1000 ease-in-out 
         max-w-4xl mx-auto
         items-center justify-between
