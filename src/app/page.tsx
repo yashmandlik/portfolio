@@ -18,7 +18,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col
-                    max-w-2xl mx-auto pt-50 px-20 md:px-0
+                    max-w-2xl mx-auto pt-50 px-10 md:px-0
                     transition-[padding] duration-1000 ease-in-out
                     animate-fade-in">
       <Introduction />

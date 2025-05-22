@@ -5,11 +5,13 @@ import getWorkMetadata from "@/components/getWorkMetadata";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { ThemeToggle } from "@/app/themeToggle";
 import Link from "next/link";
+import nextConfig from "@config";
 
 const getWorkContent = (slug: string) => {
     const folder = "data/work/";
     const file = `${folder}${slug}.md`;
-    const content = fs.readFileSync(file, "utf-8");
+    let content = fs.readFileSync(file, "utf-8");
+    content = content.replaceAll(/\$\{basePath\}/gi, nextConfig.basePath ?? "");
     const contentMatter = matter(content);
     return contentMatter;
 };
@@ -32,7 +34,7 @@ const workPage = async (props: WorkPageProps) => {
     const slug = resolvedParams.slug;
     const content = getWorkContent(slug)
     return (
-        <div className="max-w-4xl mx-auto px-20 lg:px-0
+        <div className="max-w-4xl mx-auto px-10 lg:px-0
                         mb-20
                         transition-[padding] duration-1000 ease-in-out
                         animate-fade-in">

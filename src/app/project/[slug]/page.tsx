@@ -5,11 +5,13 @@ import getProjectMetadata from "@/components/getProjectMetadata";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import Link from "next/link";
 import { ThemeToggle } from "@/app/themeToggle";
+import nextConfig from "@config";
 
 const getProjectContent = (slug: string) => {
     const folder = "data/projects/";
     const file = `${folder}${slug}.md`;
-    const content = fs.readFileSync(file, "utf-8");
+    let content = fs.readFileSync(file, "utf-8");
+    content = content.replaceAll(/\$\{basePath\}/gi, nextConfig.basePath ?? "");
     const contentMatter = matter(content);
     return contentMatter;
 };
@@ -32,7 +34,7 @@ const projectPage = async (props: ProjectPageProps) => {
     const slug = resolvedParams.slug;
     const content = getProjectContent(slug)
     return (
-        <div className="max-w-4xl mx-auto px-20 lg:px-0 
+        <div className="max-w-4xl mx-auto px-10 lg:px-0 
                         mb-20
                         transition-[padding] duration-1000 ease-in-out
                         animate-fade-in">

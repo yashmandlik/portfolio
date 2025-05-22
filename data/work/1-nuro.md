@@ -7,6 +7,6 @@ date: "2025 - Now"
 
 ### Nuro
 
-![](/resources/work/nuro-figure-1.jpg)
+![](${basePath}/resources/work/nuro-figure-1.jpg)
 
 [ Under Construction ]
