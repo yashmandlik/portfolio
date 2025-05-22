@@ -17,7 +17,19 @@ export const metadata: Metadata = {
     "ADAS",
     "robotics",
     "california",
-  ]
+  ],
+  icons: {
+    icon: [
+      {
+        url: '/favicon-dark.ico',
+        media: '(prefers-color-scheme: light)'
+      },
+      {
+        url: '/favicon-dark.ico',
+        media: '(prefers-color-scheme: dark)'
+      }
+    ]
+  }
 };
 
 // Fonts
