@@ -1,15 +1,15 @@
 import Introduction from "@/app/introduction";
 import About from "@/app/about";
-import getProjectMetadata from "@/components/getProjectMetadata";
-import ProjectPreview from "@/components/projectPreview";
+// import getProjectMetadata from "@/components/getProjectMetadata";
+// import ProjectPreview from "@/components/projectPreview";
 import getWorkMetadata from "@/components/getWorkMetadata";
 import WorkPreview from "@/components/workPreview";
 
 const HomePage = () => {
-  const projectMetadata = getProjectMetadata();
-  const projectPreviews = projectMetadata.map((project) => (
-    <ProjectPreview key={project.slug} {...project} />
-  ));
+  // const projectMetadata = getProjectMetadata();
+  // const projectPreviews = projectMetadata.map((project) => (
+  //   <ProjectPreview key={project.slug} {...project} />
+  // ));
 
   const workMetadata = getWorkMetadata();
   const workPreviews = workMetadata.map((work) => (
