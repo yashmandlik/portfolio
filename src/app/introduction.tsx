@@ -6,7 +6,7 @@ const Introduction = ()  => {
       <h1 className="text-xl font-medium"> 
         Hello, I&apos;m Yash 
       </h1>
-      <div className="text-xl text-orange-400 hover:animate-pulse">
+      <div className="text-xl cursor-pointer">
         <ThemeToggle />
       </div>
     </div>

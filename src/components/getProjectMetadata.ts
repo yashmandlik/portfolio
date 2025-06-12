@@ -5,9 +5,9 @@ import { ProjectMetadata } from "@/components/ProjectMetadata";
 const getProjectMetadata = (): ProjectMetadata[] => {
   const folder = "data/projects/"
   const files = fs.readdirSync(folder)
-  const mdFiles = files.filter((file) => file.endsWith(".md"));
+  const mdxFiles = files.filter((file) => file.endsWith(".mdx"));
 
-  const projects = mdFiles.map((fileName) => {
+  const projects = mdxFiles.map((fileName) => {
     const contents = fs.readFileSync(`data/projects/${fileName}`, "utf-8");
     const contentMatter = matter(contents);
     return {
@@ -15,7 +15,7 @@ const getProjectMetadata = (): ProjectMetadata[] => {
       date: contentMatter.data.date,
       desc: contentMatter.data.desc,
       tags: contentMatter.data.tags,
-      slug: fileName.replace(".md", ""),
+      slug: fileName.replace(".mdx", ""),
     }
   });
 

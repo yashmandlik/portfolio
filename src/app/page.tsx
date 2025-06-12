@@ -1,15 +1,15 @@
 import Introduction from "@/app/introduction";
 import About from "@/app/about";
-// import getProjectMetadata from "@/components/getProjectMetadata";
-// import ProjectPreview from "@/components/projectPreview";
+import getProjectMetadata from "@/components/getProjectMetadata";
+import ProjectPreview from "@/components/projectPreview";
 import getWorkMetadata from "@/components/getWorkMetadata";
 import WorkPreview from "@/components/workPreview";
 
 const HomePage = () => {
-  // const projectMetadata = getProjectMetadata();
-  // const projectPreviews = projectMetadata.map((project) => (
-  //   <ProjectPreview key={project.slug} {...project} />
-  // ));
+  const projectMetadata = getProjectMetadata();
+  const projectPreviews = projectMetadata.map((project) => (
+    <ProjectPreview key={project.slug} {...project} />
+  ));
 
   const workMetadata = getWorkMetadata();
   const workPreviews = workMetadata.map((work) => (
@@ -31,7 +31,7 @@ const HomePage = () => {
         <div className="w-full md:w-1/2 text-left md:pl-10 mb-30 md:mb-0">
           <p className="mb-5">Projects and Learnings</p>
           {/* {projectPreviews} */}
-          <p className="text-xs text-stone-500">[ Under Construction ]</p>
+          <p className="text-sm text-stone-500">[ Under Construction ]</p>
         </div>
       </div>
     </div>

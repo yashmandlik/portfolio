@@ -1,20 +1,20 @@
 import fs from "fs";
-import Markdown from "markdown-to-jsx";
-import matter from "gray-matter";
+import { compileMDX } from "next-mdx-remote/rsc";
 import getProjectMetadata from "@/components/getProjectMetadata";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { IoIosArrowBack } from "react-icons/io";
 import Link from "next/link";
 import { ThemeToggle } from "@/app/themeToggle";
 import nextConfig from "@config";
+import { mdxComponents } from "@/components/mdxComponents";
 
-const getProjectContent = (slug: string) => {
-    const folder = "data/projects/";
-    const file = `${folder}${slug}.md`;
-    let content = fs.readFileSync(file, "utf-8");
-    content = content.replaceAll(/\$\{basePath\}/gi, nextConfig.basePath ?? "");
-    const contentMatter = matter(content);
-    return contentMatter;
-};
+// const getProjectContent = (slug: string) => {
+//     const folder = "data/projects/";
+//     const file = `${folder}${slug}.mdx`;
+//     let content = fs.readFileSync(file, "utf-8");
+//     content = content.replaceAll(/\$\{basePath\}/gi, nextConfig.basePath ?? "");
+//     const contentMatter = matter(content);
+//     return contentMatter;
+// };
 
 export const generateStaticParams = async () => {
     const projects = getProjectMetadata();
@@ -32,7 +32,21 @@ interface ProjectPageProps {
 const projectPage = async (props: ProjectPageProps) => {
     const resolvedParams = await props.params;
     const slug = resolvedParams.slug;
-    const content = getProjectContent(slug)
+    // const content = getProjectContent(slug)
+
+    const folder = "data/projects/";
+    const file = `${folder}${slug}.mdx`;
+    let raw = fs.readFileSync(file, "utf-8");
+    raw = raw.replaceAll(/\$\{basePath\}/gi, nextConfig.basePath ?? "");
+    const { content } = await compileMDX({
+        source: raw,
+        options: { 
+            parseFrontmatter: true,
+            mdxOptions: {}, 
+        },
+        components: mdxComponents,
+    });
+
     return (
         <div className="max-w-4xl mx-auto px-10 lg:px-0 
                         mb-20
@@ -40,10 +54,10 @@ const projectPage = async (props: ProjectPageProps) => {
                         animate-fade-in">
             <div className="flex items-center justify-between py-20">
                 <Link href={"/"} className="flex items-center hover:bg-stone-500/30 rounded transition duration-700 ease-in-out">
-                    <IoArrowBackCircleSharp className="mr-2 text-orange-400"/>
+                    <IoIosArrowBack className="mr-1"/>
                     home
                 </Link>
-                <div className="text-xl text-orange-400 hover:animate-pulse">
+                <div className="text-xl cursor-pointer">
                     <ThemeToggle />
                 </div>
             </div>
@@ -55,7 +69,7 @@ const projectPage = async (props: ProjectPageProps) => {
                                     prose-code:text-xs prose-code:font-geist-mono
                                     prose-pre:bg-neutral-800 prose-pre:rounded-md
                                     prose-img:rounded-2xl">
-                    <Markdown>{content.content}</Markdown>
+                    {content}
                 </article>
             </div>
         </div>
