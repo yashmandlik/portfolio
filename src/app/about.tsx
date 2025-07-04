@@ -6,9 +6,9 @@ const About = () => {
     return (
         <div className="mb-10">
             <p className="text-sm text-stone-700 dark:text-stone-300"> 
-                I&apos;m an <Link href={`/work/nuro`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">engineer at Nuro<LuArrowUpRight className="text-base"/></Link>, where I focus on sensor development and hardware-software integration for ADAS and robotics platforms. My interests span a broad range of areas, including embedded systems, signal processing, machine learning and applied AI for robotics, working at the intersection of software, hardware and systems. <br />
+                I&apos;m an <Link href={`/work/nuro`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">engineer at Nuro<LuArrowUpRight className="text-base"/></Link>, where I focus on sensor development for autonomous mobility. My interests span a broad range of areas, including embedded systems, signal processing, machine learning and applied AI for robotics. <br />
                 
-                <br /> Previously, I <Link href={`/work/uhnder`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">worked at Uhnder<LuArrowUpRight className="text-base"/></Link>, where I helped develop and validate imaging radars, focusing on software and system integration. <br />
+                <br /> Previously, I <Link href={`/work/uhnder`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">worked at Uhnder<LuArrowUpRight className="text-base"/></Link>, where I helped develop digital imaging radars, focusing on sensor software, hardware-software integration and system validation. <br />
                 
                 <br /> Currently based in Mountain View, California. <br />
 

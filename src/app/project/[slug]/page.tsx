@@ -1,11 +1,11 @@
 import fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import getProjectMetadata from "@/components/getProjectMetadata";
-import { IoIosArrowBack } from "react-icons/io";
 import Link from "next/link";
 import { ThemeToggle } from "@/app/themeToggle";
 import nextConfig from "@config";
 import { mdxComponents } from "@/components/mdxComponents";
+import { LuArrowUpRight } from "react-icons/lu";
 
 // const getProjectContent = (slug: string) => {
 //     const folder = "data/projects/";
@@ -53,10 +53,12 @@ const projectPage = async (props: ProjectPageProps) => {
                         transition-[padding] duration-1000 ease-in-out
                         animate-fade-in">
             <div className="flex items-center justify-between py-20">
-                <Link href={"/"} className="flex items-center hover:bg-stone-500/30 rounded transition duration-700 ease-in-out">
-                    <IoIosArrowBack className="mr-1"/>
-                    home
-                </Link>
+                <div className="group">
+                    <Link href={"/"} className="flex items-center hover:bg-stone-500/30 rounded transition duration-700 ease-in-out">
+                        home
+                        <LuArrowUpRight className="text-base opacity-0 group-hover:opacity-100 transition-opacity duration-200 ml-1" />
+                    </Link>
+                </div>
                 <div className="text-xl cursor-pointer">
                     <ThemeToggle />
                 </div>
