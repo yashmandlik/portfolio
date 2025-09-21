@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { HiSun, HiMoon } from 'react-icons/hi2';
 
 export function ThemeToggle() {
     const [mounted, setMounted] = useState(false)
@@ -15,10 +15,10 @@ export function ThemeToggle() {
     )
 
     if (resolvedTheme === 'dark') {
-        return <FiSun onClick={() => setTheme('light')} />
+        return <HiSun onClick={() => setTheme('light')} />
     }
 
     if (resolvedTheme === 'light') {
-        return <FiMoon onClick={() => setTheme('dark')} />
+        return <HiMoon onClick={() => setTheme('dark')} />
     }
 }

@@ -6,13 +6,11 @@ const About = () => {
     return (
         <div className="mb-10">
             <p className="text-sm text-stone-700 dark:text-stone-300"> 
-                I&apos;m an <Link href={`/work/nuro`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">engineer at Nuro<LuArrowUpRight className="text-base"/></Link>, where I focus on sensor development for autonomous mobility. My interests span a broad range of areas, including embedded systems, signal processing, machine learning and applied AI for robotics. <br />
-                
-                <br /> Previously, I <Link href={`/work/uhnder`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">worked at Uhnder<LuArrowUpRight className="text-base"/></Link>, where I helped develop digital imaging radars, focusing on sensor software, hardware-software integration and system validation. <br />
-                
-                <br /> Currently based in Mountain View, California. <br />
+                I&apos;m a <Link href={`https://www.nuro.ai/`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out"> Sensor Engineer at Nuro<LuArrowUpRight className="text-base"/></Link>, where I focus on sensor development and performance evaluation, helping intelligent machines better perceive the physical world. <br />
 
-                <br /> Reach out to me on <Link href={"https://www.linkedin.com/in/yashmandlik/"} target="_blank" className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">LinkedIn<LuArrowUpRight className="text-base"/></Link> or at <Link href={"mailto:yashmandlik.work@gmail.com"} className="inline-flex hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">yashmandlik.work@gmail.com</Link>
+                <br /> Before Nuro, I <Link href={`https://www.uhnder.com/`} className="inline-flex items-center hover:bg-gray-400/30 rounded transition duration-700 ease-in-out">was at Uhnder<LuArrowUpRight className="text-base"/></Link>, working on hardware-software integration and system validation for digital imaging radars. <br />
+                
+                <br /> I&apos;m broadly interested in machine learning and robotics, with a growing focus on signal processing and embedded systems, helping build intelligent autonomous systems that operate reliably in the real world. <br />
             </p>
         </div>
     )
